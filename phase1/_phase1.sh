@@ -13,5 +13,5 @@ echo -e "\nExecuting your tests..."
 run-program --test-category "Unit Tests" --test-message "Your tests run without error" gradle test
 
 
-run-program --test-category "Execution Tests" --test-message "phase1test" --timeout 3 $CMD -ds tests/phase1test.$LANG_NAME
+run-program --test-category "Execution Tests" --test-message "phase1test runs without crashing" --showoutputonpass --timeout 3 $CMD -ds tests/phase1test.$LANG_NAME
 
