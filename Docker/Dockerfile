@@ -15,5 +15,5 @@ ENV PATH="/gradle-8.5/bin:${PATH}"
 ENV GRADLE_USER_HOME="/tmp/.gradle"
 
 COPY Docker/setup.sh .
-COPY lexer /lexer/
+COPY starter /starter/
 RUN bash -v setup.sh

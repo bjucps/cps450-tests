@@ -1,4 +1,4 @@
-cd /lexer
+cd /starter
 gradle test clean 
 cd /
 
