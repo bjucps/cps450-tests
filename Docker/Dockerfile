@@ -1,5 +1,5 @@
 FROM ubuntu:22.04 
-RUN apt-get update && apt-get install -y curl unzip \
+RUN dpkg --add-architecture i386 && apt-get update && apt-get install -y curl unzip build-essential libc6:i386 libstdc++6:i386 gcc-multilib \
     && apt-get clean
 
 RUN curl -L --insecure https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.1%2B12/OpenJDK21U-jdk_x64_linux_hotspot_21.0.1_12.tar.gz --output jdk.tgz --silent && \
