@@ -309,15 +309,15 @@ function run-program {
         fi
     fi
     if [ -n "$expected_fn" ]; then
-        if [ -r "$expected_fn" ]; then
-            # Expected file specified and exists
-            if [ $incorrect_result -eq 1 -o -z "$diff_cmd" ]; then
-                echo "=========================================================" >> __output.log
-                echo "EXPECTED OUTPUT" >> __output.log
-                echo "=========================================================" >> __output.log
-                cat $expected_fn >> __output.log
-            fi
-        else
+        if [ ! -r "$expected_fn" ]; then
+        #     # Expected file specified and exists
+        #     if [ $incorrect_result -eq 1 -o -z "$diff_cmd" ]; thenz
+        #         echo "=========================================================" >> __output.log
+        #         echo "EXPECTED OUTPUT" >> __output.log
+        #         echo "=========================================================" >> __output.log
+        #         cat $expected_fn >> __output.log
+        #     fi
+        # else
           echo "*** No file named $expected_fn produced ***" >> __output.log
           result=$FAIL
         fi
