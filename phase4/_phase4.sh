@@ -1,8 +1,8 @@
 if [ -z "$IS_LOCAL_TEST" ]
 then
   sudo dpkg --add-architecture i386 
-  sudo apt-get update
-  sudo apt-get install libc6:i386 libstdc++6:i386 gcc-multilib
+  sudo apt-get update >/dev/null 2>&1
+  sudo apt-get install libc6:i386 libstdc++6:i386 gcc-multilib >/dev/null 2>&1
 fi
 
 require-folder $LANG_NAME
