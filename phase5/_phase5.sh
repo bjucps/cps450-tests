@@ -6,10 +6,11 @@ then
 fi
 
 require-folder $LANG_NAME
-require-files $LANG_NAME/README.md
+require-files $LANG_NAME/README.md $LANG_NAME/stdlib.c
 
 cd $LANG_NAME
 do-compile gradle install || exit 
+do-compile --test-message "Build stdlib.c" gcc -m32 -c stdlib.c || exit
 
 mkdir tests && cp -r $CLASS_DIR/tests/phase4/* tests
 
